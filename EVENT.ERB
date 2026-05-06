@@ -1,7 +1,7 @@
 @EVENT
 
 PRINTL ========================================
-PRINTL   My Era Game - Emuera v8 기반
+PRINTL     My Era Game - Emuera v8 기반
 PRINTL ========================================
 PRINTL
 PRINTL 안녕하세요! 이는 기본 Era 게임 템플릿입니다.
@@ -23,11 +23,54 @@ ENDIF
 @START_GAME
 PRINTW 게임이 시작되었습니다!
 PRINTL
-PRINTL 여기서 다양한 이벤트를 추가해 보세요.
-PRINTL 예: 캐릭터 만나기, 행동 선택 등
-PRINTW 게임 종료.
+PRINTL 이제 기본 캐릭터와 상호작용할 수 있습니다.
+CALL SHOW_CHARACTER_MENU
 
 @SHOW_SETTINGS
-PRINTL 설정 메뉴 (TODO)
-PRINTL 이 템플릿을 기반으로 확장해 주세요.
+PRINTL 설정 메뉴 (TODO - 확장 예정)
 PRINTW 돌아가기
+
+@SHOW_CHARACTER_MENU
+PRINTL
+PRINTL --- 캐릭터 메뉴 ---
+PRINTL [0] 상태 확인
+PRINTL [1] 대화하기
+PRINTL [2] 돌아가기
+PRINTL
+INPUT
+
+IF RESULT == 0
+	CALL SHOW_STATUS
+ELSEIF RESULT == 1
+	CALL TALK_TO_CHARACTER
+ELSEIF RESULT == 2
+	RETURN
+ENDIF
+
+@SHOW_STATUS
+PRINTL
+PRINTL [ 상태 창 ]
+PRINTL 이름: 아이코
+PRINTL 성격: 차분하고 좋은 소녀
+PRINTL 호감도: 50
+PRINTL 신뢰도: 60
+PRINTW 돌아가기
+
+@TALK_TO_CHARACTER
+PRINTL
+PRINTL 아이코: "안녕하세요, 주인님."
+PRINTL 아이코: "오늘 날씨가 좋아요."
+PRINTL
+PRINTL [0] 감사해
+PRINTL [1] 더 이야기해
+PRINTL [2] 돌아가기
+INPUT
+
+IF RESULT == 0
+	PRINTW 아이코가 미소 지었습니다!
+ELSEIF RESULT == 1
+	PRINTW 아이코: "주인님과 이야기하는 게 좋아요~"
+ELSE
+	RETURN
+ENDIF
+CALL SHOW_CHARACTER_MENU
