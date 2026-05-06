@@ -1,48 +1,34 @@
 @EVENTFIRST
-; Emuera 기본 시작 함수 (Shift-JIS 호환)
-
 PRINTL ========================================
-PRINTL          eraKaihen - 改変のギルド
+PRINTL          eraKaihen - 개변의 길드
 PRINTL ========================================
 PRINTL
-PRINTL 自分のギルドを運営するあなた。
-PRINTL 冒険者たちを洗脳してダンジョンに送り出しましょう。
+PRINTL 자신의 길드를 운영하는 당신.
+PRINTL 모험자들을 최면으로 만들어 던전에 보내세요.
 PRINTL
-PRINTL [0] ギルド管理
-PRINTL [1] 冒険者募集
-PRINTL [2] ダンジョン派遣
-PRINTL [3] ショップ
-PRINTL [9] 終了
+PRINTL [0] 길드 관리
+PRINTL [1] 모험자 모집
+PRINTL [2] 던전 파견
+PRINTL [3] 상점 확인
+PRINTL [9] 종료
 PRINTL
 INPUT
 
 IF RESULT == 0
-	CALL GUILD_MANAGEMENT
+ CALL GUILD_MANAGEMENT
 ELSEIF RESULT == 1
-	CALL RECRUIT_ADVENTURER
+ CALL RECRUIT_ADVENTURER
 ELSEIF RESULT == 2
-	CALL SEND_TO_DUNGEON
+ CALL SEND_TO_DUNGEON
 ELSEIF RESULT == 3
-	CALL SHOW_SHOP
+ CALL SHOW_SHOP
 ELSEIF RESULT == 9
-	QUIT
+ QUIT
 ENDIF
 
 @EVENT
 CALL EVENTFIRST
 
 @GUILD_MANAGEMENT
-PRINTL ギルド管理メニュー (TODO)
-PRINTW 戻る
-
-@RECRUIT_ADVENTURER
-PRINTL 冒険者募集 (TODO)
-PRINTW 戻る
-
-@SEND_TO_DUNGEON
-PRINTL ダンジョン派遣 (TODO)
-PRINTW 戻る
-
-@SHOW_SHOP
-PRINTL ショップ (TODO)
-PRINTW 戻る
+PRINTL 길드 관리 메뉴 (TODO)
+PRINTW 돌아가기
