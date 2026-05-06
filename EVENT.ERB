@@ -1,0 +1,33 @@
+@EVENT
+
+PRINTL ========================================
+PRINTL   My Era Game - Emuera v8 기반
+PRINTL ========================================
+PRINTL
+PRINTL 안녕하세요! 이는 기본 Era 게임 템플릿입니다.
+PRINTL
+PRINTL [0] 게임 시작하기
+PRINTL [1] 설정 보기
+PRINTL [2] 종료
+PRINTL
+INPUT
+
+IF RESULT == 0
+	CALL START_GAME
+ELSEIF RESULT == 1
+	CALL SHOW_SETTINGS
+ELSEIF RESULT == 2
+	QUIT
+ENDIF
+
+@START_GAME
+PRINTW 게임이 시작되었습니다!
+PRINTL
+PRINTL 여기서 다양한 이벤트를 추가해 보세요.
+PRINTL 예: 캐릭터 만나기, 행동 선택 등
+PRINTW 게임 종료.
+
+@SHOW_SETTINGS
+PRINTL 설정 메뉴 (TODO)
+PRINTL 이 템플릿을 기반으로 확장해 주세요.
+PRINTW 돌아가기

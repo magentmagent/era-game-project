@@ -1,0 +1,6 @@
+# Era 게임 사이브 폴더
+sav/
+*.sav
+*.log
+Thumbs.db
+.DS_Store
