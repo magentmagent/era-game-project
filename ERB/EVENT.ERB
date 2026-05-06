@@ -1,4 +1,6 @@
-@EVENT
+@EVENTFIRST
+; Emuera 기본 시작 함수
+; 길드 주인이 게임을 시작할 때 호출됩니다.
 
 PRINTL ========================================
 PRINTL          eraKaihen - 개변의 길드
@@ -27,12 +29,16 @@ ELSEIF RESULT == 9
 	QUIT
 ENDIF
 
+@EVENT
+; 기본 메뉴 (동일 함수)
+CALL EVENTFIRST
+
 @GUILD_MANAGEMENT
-PRINTL 길드 관리 메뉴 (TODO)
+PRINTL 길드 관리 메뉴 (TODO - 모험자 목록 / 최면 적용)
 PRINTW 돌아가기
 
 @RECRUIT_ADVENTURER
-PRINTL 모험자 모집 (TODO - 종족/직업 선택)
+PRINTL 모험자 모집 (TODO)
 PRINTW 돌아가기
 
 @SEND_TO_DUNGEON
